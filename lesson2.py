@@ -12,6 +12,9 @@ class Pig:
     def __add__(self, other):
         return self.health + other.health
 
+    def __hash__(self):
+        return f'f{self.food}c{self.color}n{self.pig_name}'
+
     def heal(self, health):
         self.health += health
 
