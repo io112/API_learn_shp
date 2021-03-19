@@ -1,5 +1,6 @@
 def main():
-    print(2)
+    a = [1, 2, 5, 4]
+    a.sort()
 
 
 def ifcon():

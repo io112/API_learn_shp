@@ -1,6 +1,7 @@
 from telebot import TeleBot
+import os
 
-api_key = '<TOKEN>'
+api_key = os.getenv('tg_api_key', 'define me')
 
 bot = TeleBot(api_key)
 stats = {}
