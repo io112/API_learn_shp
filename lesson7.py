@@ -1,3 +1,4 @@
+# @shp_bot
 import os
 from urllib.request import urlretrieve
 
@@ -7,16 +8,25 @@ api_key = os.getenv('API_KEY', 'define me')
 
 bot = TeleBot(api_key)
 cat_gif = None
+cat_video = None
 
 
-@bot.message_handler(commands=['send_pic'])
+@bot.message_handler(commands=['send_gif'])
 def send_picture(message):
     global cat_gif
     if cat_gif is None:
-        cat_gif = bot.send_photo(message.chat.id, open('img\\cat1.gif', 'rb'))
+        cat_gif = bot.send_animation(message.chat.id, open('img\\cat1.gif', 'rb'))
     else:
-        bot.send_photo(message.chat.id, cat_gif.photo[0].file_id)
-        print(bot.get_file(cat_gif.photo[0].file_id).file_path)
+        bot.send_animation(message.chat.id, cat_gif.animation.file_id)
+
+
+@bot.message_handler(commands=['send_video'])
+def send_picture(message):
+    global cat_video
+    if cat_video is None:
+        cat_video = bot.send_video(message.chat.id, open('img\\cat1.gif', 'rb'))
+    else:
+        bot.send_video(message.chat.id, cat_video.video.file_id)
 
 
 @bot.message_handler(content_types=['photo'])
