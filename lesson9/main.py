@@ -4,12 +4,10 @@ import time
 
 import flask
 import telebot
-from flask import Flask
-from telebot import TeleBot
 
-app = Flask(__name__)
+app = flask.Flask(__name__)
 api_key = os.getenv('API_KEY', 'define me')
-bot = TeleBot(api_key)
+bot = telebot.TeleBot(api_key)
 
 WEBHOOK_HOST = '4a372d72591a.ngrok.io'
 WEBHOOK_PORT = 443
