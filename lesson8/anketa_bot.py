@@ -1,3 +1,4 @@
+import logging
 import os
 
 from telebot import TeleBot
@@ -56,4 +57,5 @@ def text(message: Message):
 
 
 if __name__ == '__main__':
+    logging.basicConfig(level=logging.DEBUG)
     bot.polling(none_stop=True)
