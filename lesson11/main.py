@@ -41,7 +41,7 @@ def upload_group_photo(vk):
 
 def long_poll_example():
     user_id = '100447269'
-    api_key = '3cb8e11bf17fb9d7c2d8afbf1943e1d7cbde743e807d5633ca99a57c4992bd0bdd264bcae806e29fe3464'
+    api_key = 'api_key'
     session = VkApi(token=api_key)
     vk = session.get_api()
     v = [str(item) for item in vk.messages.search(q='hi')['items']]

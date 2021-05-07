@@ -1,7 +1,9 @@
+import os
+
 from pyowm.owm import OWM
 from pyowm.weatherapi25.weather import Weather
 
-owm = OWM('52605c3c46714a0bca463ac908c96920')
+owm = OWM(os.environ.get('owm_token'))
 weather_mgr = owm.weather_manager()
 
 

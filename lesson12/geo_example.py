@@ -1,7 +1,8 @@
 from telebot import TeleBot
 from telebot.types import Message
+import os
 
-bot = TeleBot('1697333266:AAHm6JD9mWWbRr5tgh7tHLAGdVI6VqNhFW4')
+bot = TeleBot(os.environ.get('token'))
 
 
 @bot.message_handler(content_types=['location'])
